@@ -1,0 +1,33 @@
+.header {
+  padding: 20px 0;
+  display: flex;
+  width: 100%;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.menu__link {
+  color: var(--dark-grayish-blue);
+  transition: 0.3s;
+}
+
+.menu__item:hover .menu__link {
+  color: var(--soft-red);
+}
+
+@media (min-width: 375px) {
+}
+@media (min-width: 1440px) {
+}
