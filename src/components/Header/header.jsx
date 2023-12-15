@@ -1,51 +1,33 @@
 import { Link } from 'react-router-dom'
 import logo from './../../assets/images/logo.svg'
+import hamburgerIcon from './../../assets/images/icon-menu.svg'
 import './header.css'
+import { routes } from '../../data'
 
-const routes = [
-  {
-    key: 1,
-    name: 'Home',
-    path: '/'
-  },
-  {
-    key: 2,
-    name: 'New',
-    path: '/'
-  },
-  {
-    key: 3,
-    name: 'Popular',
-    path: '/'
-  },
-  {
-    key: 4,
-    name: 'Trending',
-    path: '/'
-  },
-  {
-    key: 5,
-    name: 'Categories',
-    path: '/'
-  }
-]
-
-function Header() {
+function Header({ menuOpen, setMenuOpen, isMobile }) {
   return (
     <header className='header'>
       <nav className='header__nav'>
         <div className='logo'>
           <img src={logo} alt='Logo' />
         </div>
-        <ul className='menu'>
-          {routes.map((route) => (
-            <li className='menu__item' key={route.key}>
-              <Link className='menu__link' to={route.path}>
-                {route.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {isMobile ? (
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className='hamburger__button'>
+            <img className='hamburger__icon' src={hamburgerIcon} alt='Menú' />
+          </button>
+        ) : (
+          <ul className='menu'>
+            {routes.map((route) => (
+              <li className='menu__item' key={route.key}>
+                <Link className='menu__link' to={route.path}>
+                  {route.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
     </header>
   )

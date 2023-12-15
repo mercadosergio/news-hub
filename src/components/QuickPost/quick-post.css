@@ -32,10 +32,21 @@
   flex-grow: 1;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
+  .quick__post {
+    margin: 20px 0;
+  }
+
+  .quick__post__img {
+    max-width: 110px;
+  }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
+  .quick__post {
+    margin: 0;
+  }
+
   .quick__post__img {
     max-width: 120px;
   }

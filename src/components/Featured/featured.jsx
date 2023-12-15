@@ -1,9 +1,23 @@
 import './featured.css'
+import featuredImgMobile from './../../assets/images/image-web-3-mobile.jpg'
+import featuredImgDesktop from './../../assets/images/image-web-3-desktop.jpg'
 
-function Featured() {
+function Featured({ isMobile }) {
   return (
     <article className='featured'>
-      <div className='featured__img' />
+      <div className='featured__img'>
+        {isMobile ? (
+          <img
+            className='featured__img__mobile'
+            src={featuredImgMobile}
+            alt='Featured new'></img>
+        ) : (
+          <img
+            className='featured__img__desktop'
+            src={featuredImgDesktop}
+            alt='Featured new'></img>
+        )}
+      </div>
       <div className='featured__body'>
         <span className='featured__title'>The Bright Future of Web 3.0?</span>
         <div className='featured__content'>

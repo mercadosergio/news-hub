@@ -1,0 +1,46 @@
+.back__sidemenu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.back__sidemenu--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 70%;
+  background-color: var(--off-white);
+  padding: 20px;
+  transition: 850ms;
+}
+
+.sidemenu--active {
+  right: 0;
+  transition: 450ms;
+}
+
+.sidemenu__head {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 80px;
+}
+
+.sidemenu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidemenu__link {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--dark-grayish-blue);
+}

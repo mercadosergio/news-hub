@@ -12,7 +12,6 @@
 }
 
 .menu {
-  display: flex;
   gap: 30px;
   font-size: 18px;
   font-weight: 500;
@@ -27,7 +26,32 @@
   color: var(--soft-red);
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
+  .menu {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+
+  .hamburger__button {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+  }
 }
-@media (min-width: 1440px) {
+
+@media (min-width: 1024px) {
+  .menu {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hamburger__button {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
 }

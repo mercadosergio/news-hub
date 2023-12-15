@@ -1,3 +1,31 @@
+export const routes = [
+  {
+    key: 1,
+    name: 'Home',
+    path: '/'
+  },
+  {
+    key: 2,
+    name: 'New',
+    path: '/'
+  },
+  {
+    key: 3,
+    name: 'Popular',
+    path: '/'
+  },
+  {
+    key: 4,
+    name: 'Trending',
+    path: '/'
+  },
+  {
+    key: 5,
+    name: 'Categories',
+    path: '/'
+  }
+]
+
 export const listedNews = [
   {
     id: 1,
