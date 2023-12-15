@@ -2,22 +2,23 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useLayoutEffect } from 'react'
 
-const canUseDOM = () => {
+const canUseDOM = () =>
   !!(
     typeof window !== 'undefined' &&
     window.document &&
     window.document.createElement
   )
-}
 
 const useSafeLayoutEffect = canUseDOM() ? useLayoutEffect : useEffect
 
 export default function useScreen(query) {
   const mql = window.matchMedia(query)
-  const [matches, setMatches] = useState(false)
+  const [matches, setMatches] = useState(matchMedia.matches)
 
-  const handler = () => {
-    setMatches(mql.matches)
+  const handler = (evt) => {
+    if (evt.media === query) {
+      setMatches(mql.matches)
+    }
   }
 
   useSafeLayoutEffect(() => {

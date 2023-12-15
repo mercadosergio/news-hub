@@ -4,18 +4,25 @@ import hamburgerIcon from './../../assets/images/icon-menu.svg'
 import './header.css'
 import { routes } from '../../data'
 
-function Header({ menuOpen, setMenuOpen, isMobile }) {
+function Header({ menuOpen, setMenuOpen, isDesktop }) {
   return (
     <header className='header'>
       <nav className='header__nav'>
         <div className='logo'>
-          <img src={logo} alt='Logo' />
+          <Link to='/'>
+            <img src={logo} alt='Logo' width={65} />
+          </Link>
         </div>
-        {isMobile ? (
+        {!isDesktop ? (
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className='hamburger__button'>
-            <img className='hamburger__icon' src={hamburgerIcon} alt='Menú' />
+            <img
+              className='hamburger__icon'
+              src={hamburgerIcon}
+              alt='Menú'
+              width={40}
+            />
           </button>
         ) : (
           <ul className='menu'>

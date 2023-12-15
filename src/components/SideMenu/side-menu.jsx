@@ -12,7 +12,7 @@ function SideMenu({ menuOpen, setMenuOpen }) {
           <button
             className='sidemenu__close'
             onClick={() => setMenuOpen(!menuOpen)}>
-            <img src={closeIcon} alt='Cerrar menú' />
+            <img src={closeIcon} alt='Cerrar menú' width={32} />
           </button>
         </div>
         <ul className='sidemenu__list'>

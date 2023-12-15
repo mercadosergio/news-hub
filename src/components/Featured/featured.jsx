@@ -1,21 +1,26 @@
 import './featured.css'
 import featuredImgMobile from './../../assets/images/image-web-3-mobile.jpg'
 import featuredImgDesktop from './../../assets/images/image-web-3-desktop.jpg'
+import { Link } from 'react-router-dom'
 
-function Featured({ isMobile }) {
+function Featured({ isDesktop }) {
   return (
     <article className='featured'>
       <div className='featured__img'>
-        {isMobile ? (
+        {!isDesktop ? (
           <img
             className='featured__img__mobile'
             src={featuredImgMobile}
-            alt='Featured new'></img>
+            alt='Featured new'
+            height={360}
+          />
         ) : (
           <img
             className='featured__img__desktop'
             src={featuredImgDesktop}
-            alt='Featured new'></img>
+            alt='Featured new'
+            height={320}
+          />
         )}
       </div>
       <div className='featured__body'>
@@ -26,9 +31,9 @@ function Featured({ isMobile }) {
             power of the platforms back into the hands of the people. But is it
             really fulfilling its promise?
           </p>
-          <a className='read_more' href=''>
+          <Link className='read_more' to='xyz'>
             Read More &#8594;
-          </a>
+          </Link>
         </div>
       </div>
     </article>
