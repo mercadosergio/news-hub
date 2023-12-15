@@ -10,18 +10,18 @@ import useScreen from '../../hooks/useScreen'
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const isDesktop = useScreen('(min-width: 420px)')
+  const { screenWidth } = useScreen()
 
   return (
     <main className='main__page'>
       <Header
-        isDesktop={isDesktop}
+        screenWidth={screenWidth}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
       />
       <section className='home'>
         <div className='featured__grid'>
-          <Featured isDesktop={isDesktop} />
+          <Featured screenWidth={screenWidth} />
         </div>
         <div className='new__grid'>
           <New />

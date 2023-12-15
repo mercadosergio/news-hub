@@ -1,30 +1,19 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useLayoutEffect } from 'react'
 
-const canUseDOM = () =>
-  !!(
-    typeof window !== 'undefined' &&
-    window.document &&
-    window.document.createElement
-  )
+export default function useScreen() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-const useSafeLayoutEffect = canUseDOM() ? useLayoutEffect : useEffect
-
-export default function useScreen(query) {
-  const mql = window.matchMedia(query)
-  const [matches, setMatches] = useState(matchMedia.matches)
-
-  const handler = (evt) => {
-    if (evt.media === query) {
-      setMatches(mql.matches)
-    }
+  const handleWidth = () => {
+    setScreenWidth(window.innerWidth)
   }
 
-  useSafeLayoutEffect(() => {
-    mql.addEventListener('change', handler)
-    return () => mql.removeEventListener('change', handler)
+  useEffect(() => {
+    window.addEventListener('resize', handleWidth)
+    return () => {
+      window.removeEventListener('resize', handleWidth)
+    }
   }, [])
 
-  return matches
+  return { screenWidth }
 }

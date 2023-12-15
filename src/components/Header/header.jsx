@@ -4,7 +4,7 @@ import hamburgerIcon from './../../assets/images/icon-menu.svg'
 import './header.css'
 import { routes } from '../../data'
 
-function Header({ menuOpen, setMenuOpen, isDesktop }) {
+function Header({ menuOpen, setMenuOpen, screenWidth }) {
   return (
     <header className='header'>
       <nav className='header__nav'>
@@ -13,7 +13,7 @@ function Header({ menuOpen, setMenuOpen, isDesktop }) {
             <img src={logo} alt='Logo' width={65} />
           </Link>
         </div>
-        {!isDesktop ? (
+        {screenWidth < 420 ? (
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className='hamburger__button'>

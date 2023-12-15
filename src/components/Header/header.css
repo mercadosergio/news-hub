@@ -27,12 +27,6 @@
 }
 
 @media (min-width: 320px) {
-  .menu {
-    /* visibility: hidden;
-    opacity: 0;
-    display: none; */
-  }
-
   .hamburger__button {
     display: flex;
     height: 100%;
@@ -47,11 +41,5 @@
     display: flex;
     visibility: visible;
     opacity: 1;
-  }
-
-  .hamburger__button {
-    /* display: none;
-    visibility: hidden;
-    opacity: 0; */
   }
 }

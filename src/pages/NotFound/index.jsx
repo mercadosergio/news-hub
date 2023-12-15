@@ -2,11 +2,14 @@ import './not-found.css'
 import notFoundImg from './../../assets/images/page-not-found.svg'
 import Header from '../../components/Header/header'
 import { Link } from 'react-router-dom'
+import useScreen from '../../hooks/useScreen'
 
 function NotFound() {
+  const { screenWidth } = useScreen()
+
   return (
     <main className='notfound'>
-      <Header />
+      <Header screenWidth={screenWidth} />
       <div className='notfound__content'>
         <img
           className='notfound__img'

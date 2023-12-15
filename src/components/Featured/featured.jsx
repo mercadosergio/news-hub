@@ -3,11 +3,11 @@ import featuredImgMobile from './../../assets/images/image-web-3-mobile.jpg'
 import featuredImgDesktop from './../../assets/images/image-web-3-desktop.jpg'
 import { Link } from 'react-router-dom'
 
-function Featured({ isDesktop }) {
+function Featured({ screenWidth }) {
   return (
     <article className='featured'>
       <div className='featured__img'>
-        {!isDesktop ? (
+        {screenWidth < 420 ? (
           <img
             className='featured__img__mobile'
             src={featuredImgMobile}
