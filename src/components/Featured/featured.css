@@ -13,6 +13,7 @@
 }
 
 .featured__text {
+  color: var(--dark-grayish-blue);
   font-weight: 500;
 }
 
