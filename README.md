@@ -6,7 +6,7 @@
 
 ## Instalación
 
-> .[!NOTA].
+> NOTA:
 > Debe tener instalado Node.js en su equipo
 
 1. Abrir la consola de su sistema operativo y tipar `git clone https://github.com/mercadosergio/news-hub.git`.
